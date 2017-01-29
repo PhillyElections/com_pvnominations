@@ -21,6 +21,9 @@
       <file driver="mysqli">sql/uninstall.sql</file>
     </sql>
   </uninstall>
+  <params>
+    <param name="recaptcha_key" default="" />
+  </params>
   <files folder="site">
     <filename>index.html</filename>
     <filename>pvnominations.php</filename>
