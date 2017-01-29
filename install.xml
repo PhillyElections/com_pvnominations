@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+  <name>PVNominations</name>
+  <creationDate>2016-12-27</creationDate>
+  <author>Matthew Murphy</author>
+  <authorEmail>matthew.e.murphy@phila.gov</authorEmail>
+  <authorUrl>http://www.philadelphiavotes.com</authorUrl>
+  <copyright>(C) 2016 City of Philadelphia</copyright>
+  <license>GPL</license>
+  <version>1.0.1</version>
+  <description>Generate nomination petitions, store, and allow for logging of returns.</description>
+  <install>
+    <sql>
+      <file driver="mysqli" charset="utf8">sql/install.sql</file>
+      <file driver="mysqli">sql/install.sql</file>
+    </sql>
+  </install>
+  <uninstall>
+    <sql>
+      <file driver="mysqli" charset="utf8">sql/uninstall.sql</file>
+      <file driver="mysqli">sql/uninstall.sql</file>
+    </sql>
+  </uninstall>
+  <files folder="site">
+    <filename>index.html</filename>
+    <filename>pvnominations.php</filename>
+    <filename>controller.php</filename>
+    <folder>assets/</folder>
+    <folder>controllers/</folder>
+    <folder>models/</folder>
+    <folder>views/</folder>
+  </files>
+  <languages folder="language/site">
+    <language tag="en-GB">en-GB.com_pvnominations.ini</language>
+    <language tag="es-ES">es-ES.com_pvnominations.ini</language>
+  </languages>
+  <administration>
+    <menu link="option=com_pvnominations">Nominations</menu>
+    <submenu>
+      <menu link="option=com_pvnominations&amp;controller=nominations">View Captured Forms</menu>
+      <menu link="option=com_pvnominations&amp;controller=ndisplays">Configure Displays</menu>
+      <menu link="option=com_pvnominations&amp;controller=ndata">Configure Data</menu>
+    </submenu>
+    <files folder="admin">
+      <filename>index.html</filename>
+      <filename>pvnominations.php</filename>
+      <filename>controller.php</filename>
+      <folder>assets/</folder>
+      <folder>controllers/</folder>
+      <folder>models/</folder>
+      <folder>sql/</folder>
+      <folder>tables/</folder>
+      <folder>views/</folder>
+    </files>
+  </administration>
+</install>
