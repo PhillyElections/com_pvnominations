@@ -23,6 +23,7 @@ class PvnominationsViewNdisplays extends JView
         JToolBarHelper::addNewX();
         JToolBarHelper::publish();
         JToolBarHelper::unpublish();
+        JToolBarHelper::preferences( 'com_pvnominations' );
 
         $ndisplays  = &$this->get('Data');
         $pagination = &$this->get('Pagination');

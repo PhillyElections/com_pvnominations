@@ -21,6 +21,7 @@ class PvnominationsViewNominations extends JView
         JToolBarHelper::editListX();
         JToolBarHelper::publish();
         JToolBarHelper::unpublish();
+        JToolBarHelper::preferences( 'com_pvnominations' );
 
         $nominations = &$this->get('Data');
         $pagination  = &$this->get('Pagination');
