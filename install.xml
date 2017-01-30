@@ -9,6 +9,13 @@
   <license>GPL</license>
   <version>1.0.1</version>
   <description>Generate nomination petitions, store, and allow for logging of returns.</description>
+    <params>
+        <param name="recaptcha_key" type="text" size="30" default="" label="Recaptcha key" description="Recaptcha key for this domain." />
+        <param name="show_recaptcha" type="radio" default="1" label="Show Recaptcha" description="Show/Hide the Recaptcha elements (enabled/disable recptcha code)">
+            <option value="0">Hide</option>
+            <option value="1">Show</option>
+        </param>
+    </params>
   <install>
     <sql>
       <file driver="mysqli" charset="utf8">sql/install.sql</file>
@@ -21,9 +28,6 @@
       <file driver="mysqli">sql/uninstall.sql</file>
     </sql>
   </uninstall>
-  <params>
-    <param name="recaptcha_key" default="" />
-  </params>
   <files folder="site">
     <filename>index.html</filename>
     <filename>pvnominations.php</filename>
