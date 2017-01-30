@@ -23,7 +23,6 @@ class PvnominationsViewNdata extends JView
         JToolBarHelper::addNewX();
         JToolBarHelper::publish();
         JToolBarHelper::unpublish();
-        JToolBarHelper::preferences( 'com_pvnominations' );
 
         $ndata      = &$this->get('Data');
         $pagination = &$this->get('Pagination');

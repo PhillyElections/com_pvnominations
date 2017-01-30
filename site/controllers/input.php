@@ -34,7 +34,11 @@ class PvnominationsControllerInput extends PvnominationsController
     {
         JRequest::checkToken() or jexit('Invalid Token');
 
-        if (!$this->recaptcha()) {
+        $params = &JComponentHelper::getParams( 'com_pvmachineinspectors' );
+
+        if (!$params->get('recaptcha_show')) {
+            // skip
+        } elseif (!$this->recaptcha($params->get('recaptcha_secret'))) {
             $this->_setMessage('Please make another attempt at verification.');
             $this->display();
 
@@ -106,12 +110,13 @@ class PvnominationsControllerInput extends PvnominationsController
             $this->display();
     }
 
-    public function recaptcha()
+    public function recaptcha($secret = null)
     {
         jimport('recaptcha.ReCaptcha');
 
-        // your secret key
-        $secret = '6LcS4xIUAAAAAPPH4OG3jvUTohAGszwqGUA_EJ5d';
+        if (!$secret) {
+            return false;
+        }
 
         // empty response
         $response = null;
