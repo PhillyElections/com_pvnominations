@@ -17,34 +17,36 @@ if (count($messages)) {
 }
 
 $ndisplays = $this->ndisplays;
-$row = (object)JRequest::get('post');
-
-jimport("pvcombo.PVCombo");
-
-$candidate_parties = array(
-    (object)array(
-        'idx'=>'', 'value'=>'Select a party'
-        ),
-    (object)array(
-        'idx'=>'Democratic', 'value'=>'Democratic'
-        ) ,
-    (object)array(
-        'idx'=>'Republican', 'value'=>'Republican'
-        )
-    );
-$candidate_offices = PVCombo::getsFromObject($ndisplays, 'id', 'office_name');
-
-array_unshift($candidate_offices, (object)array(
-    'idx'=>'', 'value'=>'Select an office.'
-    ));
-
-
-$document->addCustomTag('<script src="https://www.google.com/recaptcha/api.js" async defer></script>');
-JHtml::_('behavior.formvalidation');
 
 if (!count($ndisplays)) {
     echo "<p>" . JText::_('NOTHING TO SEE HERE') . "</p>";
 } else {
+
+    $row = (object)JRequest::get('post');
+
+    jimport("pvcombo.PVCombo");
+
+    $candidate_parties = array(
+        (object)array(
+            'idx'=>'', 'value'=>'Select a party'
+            ),
+        (object)array(
+            'idx'=>'Democratic', 'value'=>'Democratic'
+            ) ,
+        (object)array(
+            'idx'=>'Republican', 'value'=>'Republican'
+            )
+        );
+    $candidate_offices = PVCombo::getsFromObject($ndisplays, 'id', 'office_name');
+
+    array_unshift($candidate_offices, (object)array(
+        'idx'=>'', 'value'=>'Select an office.'
+        ));
+
+
+    $document->addCustomTag('<script src="https://www.google.com/recaptcha/api.js" async defer></script>');
+    JHtml::_('behavior.formvalidation');
+
 ?>
 <p><?=JText::_('INTRODUCTORY TEXT');?></p>
 <form action="<?=JRoute::_('index.php?option=com_pvnominations');?>" method="post" id="josForm" name="josForm" class="form-validate">
