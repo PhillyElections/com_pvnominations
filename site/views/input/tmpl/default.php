@@ -2,7 +2,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-$params = &JComponentHelper::getParams( 'com_pvmachineinspectors' );
+$params = &JComponentHelper::getParams( 'com_pvnominations' );
 
 //force the token to change (so we can't browse in and duplicate hashes)
 $reset=JUtility::getToken(true);
@@ -140,7 +140,7 @@ if (!count($ndisplays)) {
             </td>
         </tr>
 <?php
-if ($params->get('recaptcha_show')) :
+if ($params->get('recaptcha_show')) {
 ?>
         <tr>
             <td height="40">&nbsp;
@@ -150,7 +150,7 @@ if ($params->get('recaptcha_show')) :
             </td>
         </tr>
 <?php
-endif;
+}
 ?>
         <tr>
             <td height="40">&nbsp;</td>
