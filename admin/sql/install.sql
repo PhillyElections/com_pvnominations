@@ -111,8 +111,8 @@ UPDATE `#__pv_nomination_data` `a`, `#__pv_offices` `o` SET `a`.`published`=1 wh
 
 /*some testing displays data - this *must* be junked */
 INSERT INTO `jos_pv_nomination_displays` (`id`, `data_id`, `signing_start`, `signing_stop`, `display_start`, `display_stop`, `election_type`, `election_date`, `description`, `published`, `checked_out`, `checked_out_time`, `created`, `updated`) VALUES
-(1, 5, '2017-02-14', '2017-03-07', '2016-02-06', '2017-03-07', 'primary', '2017-05-08', '', 1, 0, '0000-00-00 00:00:00', '2016-12-31 09:28:41', '0000-00-00 00:00:00'),
-(2, 9, '2017-02-14', '2017-03-07', '2016-02-06', '2017-03-07', 'primary', '2017-05-08', '', 1, 0, '0000-00-00 00:00:00', '2016-12-31 09:29:16', '0000-00-00 00:00:00');
+(1, 5, '2017-02-14', '2017-03-07', '2017-02-06', '2017-03-07', 'primary', '2017-05-08', '', 1, 0, '0000-00-00 00:00:00', '2016-12-31 09:28:41', '0000-00-00 00:00:00'),
+(2, 9, '2017-02-14', '2017-03-07', '2017-02-06', '2017-03-07', 'primary', '2017-05-08', '', 1, 0, '0000-00-00 00:00:00', '2016-12-31 09:29:16', '0000-00-00 00:00:00');
 
 -- ALTER TABLE `#__pv_nomination_data`
 --   ADD CONSTRAINT `fk_pv_nominations_data_office_id`
