@@ -34,7 +34,7 @@ class PvnominationsModelInput extends JModel
         $where .= ' AND `nd`.`data_id`=`na`.`id` ';
         $where .= ' AND `na`.`office_id`=`o`.`id` ';
         $where .= ' AND CAST(now() AS DATETIME) BETWEEN CONCAT(`nd`.`display_start`, \' 07:00:00\') AND CONCAT(`nd`.`display_stop`, \' 16:00:00\') '; // we're currently in the eastern time zone but the server is central
-d($query.$where);
+
         return $query . $where;
     }
 
