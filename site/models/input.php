@@ -33,7 +33,7 @@ class PvnominationsModelInput extends JModel
         $where .= ' AND `na`.`published`=1 ';
         $where .= ' AND `nd`.`data_id`=`na`.`id` ';
         $where .= ' AND `na`.`office_id`=`o`.`id` ';
-        $where .= ' AND CAST(now() AS DATETIME) BETWEEN CONCAT(`nd`.`display_start`, ' 08:00:00') AND CONCAT(`nd`.`display_stop`, ' 17:00:00') ';
+        $where .= ' AND CAST(now() AS DATETIME) BETWEEN CONCAT(`nd`.`display_start`, ' 08:00:00') AND CONCAT(`nd`.`display_stop`, ' 15:00:00') ';
 
         return $query . $where;
     }
