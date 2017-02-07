@@ -65,4 +65,13 @@ class PvnominationsControllerNominations extends PvnominationsController
         $model->unpublish();
         $this->display();
     }
+
+    public function remove()
+    {
+        JRequest::checkToken() or jexit('Invalid Token');
+
+        $model = $this->getModel('nominations');
+        $model->delete();
+        $this->display();
+    }
 }

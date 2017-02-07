@@ -19,8 +19,9 @@ class PvnominationsViewNominations extends JView
     {
         JToolBarHelper::title(JText::_('Nominations Manager'), 'generic.png');
         JToolBarHelper::editListX();
-        JToolBarHelper::publish();
-        JToolBarHelper::unpublish();
+        JToolBarHelper::deleteListX();
+        JToolBarHelper::publishList();
+        JToolBarHelper::unpublishList();
         JToolBarHelper::preferences( 'com_pvnominations' );
 
         $nominations = &$this->get('Data');

@@ -69,7 +69,7 @@ class PvnominationsModelNominations extends JModel
                        WHERE
                            `n`.`display_id`=`nd`.`id` 
                        AND `nd`.`data_id`=`na`.`id` 
-                       AND `na`.`office_id`=`o`.`id`';
+                       AND `na`.`office_id`=`o`.`id` ORDER BY `n`.`id` ';
 
         return $query . $where;
     }

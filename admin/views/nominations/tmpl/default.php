@@ -104,6 +104,6 @@ $k = 1 - $k;
     <?=JHTML::_('form.token');?>
     <input type="hidden" name="task" value="" />
     <input type="hidden" name="boxchecked" value="0" />
-    <input type="hidden" name="controller" value="nomination" />
+    <input type="hidden" name="controller" value="nominations" />
     <?=JHTML::_('form.token');?>
 </form>
