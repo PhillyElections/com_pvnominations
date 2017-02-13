@@ -34,7 +34,7 @@ $row = !$this->isNew ? $this->nomination : (object)JRequest::get('post');
               </label>
             </td>
             <td>
-              <?=$published ? 'Yes': 'No' ;?>
+              <?=$row->published ? 'Yes': 'No' ;?>
             </td>
           </tr>
           <tr>
