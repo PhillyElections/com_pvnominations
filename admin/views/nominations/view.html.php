@@ -25,7 +25,7 @@ class PvnominationsViewNominations extends JView
         JToolBarHelper::preferences( 'com_pvnominations' );
 
         $t = &JToolbar::getInstance('toolbar');
-        $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvnominations&controller=applicants&format=raw');
+        $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvnominations&controller=nominations&format=raw');
 
         $nominations = &$this->get('Data');
         $pagination  = &$this->get('Pagination');
