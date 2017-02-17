@@ -36,14 +36,14 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     $row = &$this->items[$i];
     fputcsv($output,
         array(
-            $row->ip,
+            $row->id,
             ($row->published ? 'P' : 'U'),
             $row->candidate_name,
             $row->office_name,
             $row->candidate_address,
             $row->candidate_occupation,
             $row->candidate_party,
-            $row->user_id,
+            $row->user_ip,
             $row->created,
         )
     );
