@@ -37,7 +37,7 @@ for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     fputcsv($output,
         array(
             $row->ip,
-            $row->published ? 'P', 'U',
+            ($row->published ? 'P' : 'U'),
             $row->candidate_name,
             $row->office_name,
             $row->candidate_address,
