@@ -56,6 +56,13 @@ class PvnominationsControllerInput extends PvnominationsController
 
         $post['user_ip'] = $_SERVER['REMOTE_ADDR'];
 
+        // lets stop that russian in the least clever way possible
+        if ($post['user_ip'] == '46.118.153.31') {
+            JRequest::setVar('msg', 'Please confirm that you have read the Nomination Petition instructions.');
+
+            return $this->display();           
+        }
+
         if ($returns=$model->store($post)) {
         } else {
             // let's grab all those errors and make them available to the view
