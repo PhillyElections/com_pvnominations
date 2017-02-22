@@ -58,9 +58,9 @@ class PvnominationsControllerInput extends PvnominationsController
 
         // lets stop that russian in the least clever way possible
         if ($post['user_ip'] == '46.118.153.31') {
-            JRequest::setVar('msg', 'Please confirm that you have read the Nomination Petition instructions.');
-
-            return $this->display();           
+            
+            $this->_setMessage('Please make another attempt at verification.');
+            $this->display();
         }
 
         if ($returns=$model->store($post)) {
