@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS `#__pv_nomination_data` (
   `signatures` int(5) NOT NULL DEFAULT 0,
   `fees` float(10,4) NOT NULL DEFAULT 0.00,
   `published` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `show_wards` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `show_divisions` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `description` varchar(255) NOT NULL DEFAULT '',
   `checked_out` int(11) UNSIGNED NOT NULL DEFAULT 0,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
