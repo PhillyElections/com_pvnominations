@@ -37,7 +37,7 @@
   <administration>
     <menu link="option=com_pvnominations">Nominations</menu>
     <submenu>
-      <menu link="option=com_pvnominations">View Captured Forms</menu>
+      <menu link="option=com_pvnominations&amp;controller=nominations">View Captured Forms</menu>
       <menu link="option=com_pvnominations&amp;controller=ndisplays">Configure Displays</menu>
       <menu link="option=com_pvnominations&amp;controller=ndata">Configure Data</menu>
     </submenu>
