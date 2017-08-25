@@ -58,10 +58,11 @@ class PvnominationsControllerInput extends PvnominationsController
 
         // lets stop that russian in the least clever way possible
         if ($post['user_ip'] == '46.118.153.31') {
-            
+
             $this->_setMessage('Please make another attempt at verification.');
             $this->display();
-        }
+            return;
+         }
 
         if ($returns=$model->store($post)) {
         } else {
