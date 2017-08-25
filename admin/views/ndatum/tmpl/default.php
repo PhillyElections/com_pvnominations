@@ -60,12 +60,32 @@ jimport('pvcombo.PVCombo');
             </tr>
             <tr>
                 <td width="200" height="30">
+                    <label id="namemsg" for="show_wards">
+                        <?=JText::_('SHOW_WARDS');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="checkbox" id="show_wards" name="show_wards" value="show_wards" <?=$row->show_wards ? 'checked' : '';?> class="check_box" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="namemsg" for="show_divisions">
+                        <?=JText::_('SHOW_DIVISIONS');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="checkbox" id="show_divisions" name="show_divisions" value="show_divisions" <?=$row->show_divisions ? 'checked' : '';?> class="check_box" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
                     <label id="namemsg" for="published">
                         <?=JText::_('PUBLISHED');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="checkbox" id="published" name="published" value="published" <?=$row->published ? 'checked' : '';?> class="check_box required" />
+                    <input type="checkbox" id="published" name="published" value="published" <?=$row->published ? 'checked' : '';?> class="check_box" />
                 </td>
             </tr>
             <tr>
