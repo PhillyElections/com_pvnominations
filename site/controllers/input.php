@@ -1,12 +1,14 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Input Controller for Pvnominations Component
+ * Input Controller for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsControllerInput extends PvnominationsController
@@ -14,7 +16,8 @@ class PvnominationsControllerInput extends PvnominationsController
     public $_msg = array();
 
     /**
-     * Display the edit form
+     * Display the edit form.
+     *
      * @return void
      */
     public function display()
@@ -26,7 +29,7 @@ class PvnominationsControllerInput extends PvnominationsController
     }
 
     /**
-     * Save a record (and redirect to main page)
+     * Save a record (and redirect to main page).
      *
      * @return void
      */
@@ -34,11 +37,11 @@ class PvnominationsControllerInput extends PvnominationsController
     {
         JRequest::checkToken() or jexit('Invalid Token');
 
-        $params = &JComponentHelper::getParams( 'com_pvmachineinspectors' );
+        $params = &JComponentHelper::getParams('com_pvmachineinspectors');
 
-        if (!$params->get('recaptcha_show')) {
+        if (! $params->get('recaptcha_show')) {
             // skip
-        } elseif (!$this->recaptcha($params->get('recaptcha_secret'))) {
+        } elseif (! $this->recaptcha($params->get('recaptcha_secret'))) {
             $this->_setMessage('Please make another attempt at verification.');
             $this->display();
 
@@ -48,7 +51,7 @@ class PvnominationsControllerInput extends PvnominationsController
         $model = $this->getModel('Input');
         $post  = JRequest::get('post');
 
-        if (!$post['confirm']) {
+        if (! $post['confirm']) {
             JRequest::setVar('msg', 'Please confirm that you have read the Nomination Petition instructions.');
 
             return $this->display();
@@ -58,11 +61,11 @@ class PvnominationsControllerInput extends PvnominationsController
 
         // lets stop that russian in the least clever way possible
         if ($post['user_ip'] == '46.118.153.31') {
-
             $this->_setMessage('Please make another attempt at verification.');
             $this->display();
+
             return;
-         }
+        }
 
         if ($returns=$model->store($post)) {
         } else {
@@ -91,7 +94,7 @@ class PvnominationsControllerInput extends PvnominationsController
      */
     public function _setMessage($message, $append = true)
     {
-        if (!$append) {
+        if (! $append) {
             $this->_msg = array($message);
         } else {
             array_push($this->_msg, $message);
@@ -99,7 +102,8 @@ class PvnominationsControllerInput extends PvnominationsController
     }
 
     /**
-     * Cancel editing a record
+     * Cancel editing a record.
+     *
      * @return void
      */
     public function cancel()
@@ -112,17 +116,16 @@ class PvnominationsControllerInput extends PvnominationsController
     {
         $model = $this->getModel('input');
         $model->unpublish();
-        
 
-            $this->_setMessage('Thank you, that nomination form has rejected.');
-            $this->display();
+        $this->_setMessage('Thank you, that nomination form has rejected.');
+        $this->display();
     }
 
     public function recaptcha($secret = null)
     {
         jimport('recaptcha.ReCaptcha');
 
-        if (!$secret) {
+        if (! $secret) {
             return false;
         }
 

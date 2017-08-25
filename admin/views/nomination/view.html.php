@@ -1,23 +1,27 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination View for Pvnominations Component
+ * Nomination View for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsViewNomination extends JView
 {
     /**
-     * display method of Nomination view
+     * display method of Nomination view.
+     *
+     * @param null|mixed $tpl
+     *
      * @return void
      **/
     public function display($tpl = null)
     {
-
         $nomination = &$this->get('Data');
         $isNew      = ($nomination->id < 1);
 

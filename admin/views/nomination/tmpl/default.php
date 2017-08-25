@@ -3,12 +3,12 @@
 defined('_JEXEC') or die('Restricted access');
 
 if (count(JRequest::getVar('msg', null, 'post'))) {
-  foreach (JRequest::getVar('msg', null, 'post') as $msg) {
-    JError::raiseWarning(1, $msg);
-  }
+    foreach (JRequest::getVar('msg', null, 'post') as $msg) {
+        JError::raiseWarning(1, $msg);
+    }
 }
 // try to cast to object next
-$row = !$this->isNew ? $this->nomination : (object)JRequest::get('post');
+$row = ! $this->isNew ? $this->nomination : (object) JRequest::get('post');
 
 ?>
 <table width="100%">
@@ -34,7 +34,7 @@ $row = !$this->isNew ? $this->nomination : (object)JRequest::get('post');
               </label>
             </td>
             <td>
-              <?=$row->published ? 'Yes': 'No' ;?>
+              <?=$row->published ? 'Yes': 'No';?>
             </td>
           </tr>
           <tr>

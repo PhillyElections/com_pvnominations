@@ -1,12 +1,14 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination Table for Pvnominations Component
+ * Nomination Table for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class TableNdisplay extends JTable
@@ -27,7 +29,8 @@ class TableNdisplay extends JTable
     public $updated;
 
     /**
-     * Define our table, index 
+     * Define our table, index.
+     *
      * @param [type] &$_db [description]
      */
     public function __construct(&$_db)
@@ -36,7 +39,8 @@ class TableNdisplay extends JTable
     }
 
     /**
-     * Validate before saving
+     * Validate before saving.
+     *
      * @return boolean
      */
     public function check()
@@ -44,19 +48,19 @@ class TableNdisplay extends JTable
         $error = 0;
 
         // We need a complete signing date range
-        if (!$this->signing_start || !$this->signing_stop) {
+        if (! $this->signing_start || ! $this->signing_stop) {
             $this->setError(JText::_('We need a complete signing date range.'));
             $error++;
         }
 
         // We need a complete display date range
-        if (!$this->display_start || !$this->display_stop) {
+        if (! $this->display_start || ! $this->display_stop) {
             $this->setError(JText::_('We need a complete display date range.'));
             $error++;
         }
 
         // gotta have a data_id
-        if (!is_numeric($this->data_id)) {
+        if (! is_numeric($this->data_id)) {
             $this->setError(JText::_('Please select a nomination data row to bind to.'));
             $error++;
         }
@@ -64,6 +68,7 @@ class TableNdisplay extends JTable
         if ($error) {
             return false;
         }
+
         return true;
     }
 }

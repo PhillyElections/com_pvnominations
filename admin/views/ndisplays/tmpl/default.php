@@ -58,47 +58,46 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
     $row     = &$rows[$i];
     $checked = JHTML::_('grid.id', $i, $row->id);
     $published = JHTML::_('grid.published', $row, $i);
-    $link = JRoute::_('index.php?option=com_pvnominations&controller=ndisplay&task=edit&cid[]='.$row->id);
-    ?>
-                <tr class="<?="row$k";?>">
+    $link = JRoute::_('index.php?option=com_pvnominations&controller=ndisplay&task=edit&cid[]='.$row->id); ?>
+                <tr class="<?="row$k"; ?>">
                     <td>
-                        <?=$row->id;?>
+                        <?=$row->id; ?>
                     </td>
                     <td>
-                        <?=$checked;?>
+                        <?=$checked; ?>
                     </td>
                     <td>
-                        <?=$published;?>
+                        <?=$published; ?>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->office_name;?></a>
+                        <a href="<?=$link?>"><?=$row->office_name; ?></a>
                     </td>
                     <td>
-                        <?=$row->election_type;?>
+                        <?=$row->election_type; ?>
                     </td>
                     <td>
-                        <?=$row->election_date;?>
+                        <?=$row->election_date; ?>
                     </td>
                     <td>
-                        <?=$row->description;?>
+                        <?=$row->description; ?>
                     </td>
                     <td>
-                        <?=$row->signing_start;?>
+                        <?=$row->signing_start; ?>
                     </td>
                     <td>
-                        <?=$row->signing_stop;?>
+                        <?=$row->signing_stop; ?>
                     </td>
                     <td>
-                        <?=$row->display_start;?>
+                        <?=$row->display_start; ?>
                     </td>
                     <td>
-                        <?=$row->display_stop;?>
+                        <?=$row->display_stop; ?>
                     </td>
                     <td>
-                        <?=$row->created;?>
+                        <?=$row->created; ?>
                     </td>
                     <td>
-                        <?=$row->updated;?>
+                        <?=$row->updated; ?>
                     </td>
                 </tr>
             <?php

@@ -1,12 +1,14 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination Model for Pvnominations Component
+ * Nomination Model for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsModelNomination extends JModel
@@ -67,7 +69,7 @@ class PvnominationsModelNomination extends JModel
             $this->_db->setQuery($query);
             $this->_data = $this->_db->loadObject();
         }
-        if (!$this->_data) {
+        if (! $this->_data) {
             $this->_data = new stdClass();
             $this->_data->id = 0;
         }
@@ -77,6 +79,8 @@ class PvnominationsModelNomination extends JModel
 
     /**
      * Method to store a record.
+     *
+     * @param mixed $data
      *
      * @return bool
      */
@@ -93,14 +97,14 @@ class PvnominationsModelNomination extends JModel
         $data[$dateIndex] = $dateNow->toMySQL();
 
         // Bind the form fields to the Nomination table
-        if (!$row->bind($data)) {
+        if (! $row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
 
             return false;
         }
 
         // Make sure the Nomination record is valid
-        if (!$row->check()) {
+        if (! $row->check()) {
             //$this->setError($this->_db->getErrorMsg());
             foreach ($row->getErrors() as $msg) {
                 $this->setError($msg);
@@ -110,7 +114,7 @@ class PvnominationsModelNomination extends JModel
         }
 
         // Store the web link table to the database
-        if (!$row->store()) {
+        if (! $row->store()) {
             $this->setError($row->getErrorMsg());
 
             return false;
@@ -132,7 +136,7 @@ class PvnominationsModelNomination extends JModel
 
         if (count($cids)) {
             foreach ($cids as $cid) {
-                if (!$row->delete($cid)) {
+                if (! $row->delete($cid)) {
                     $this->setError($row->getErrorMsg());
 
                     return false;

@@ -1,18 +1,23 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nominations View for Pvnominations Component
+ * Nominations View for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsViewNominations extends JView
 {
     /**
-     * Pvnominations view display method
+     * Pvnominations view display method.
+     *
+     * @param null|mixed $tpl
+     *
      * @return void
      **/
     public function display($tpl = null)
@@ -22,7 +27,7 @@ class PvnominationsViewNominations extends JView
         //JToolBarHelper::deleteListX();
         JToolBarHelper::publishList();
         JToolBarHelper::unpublishList();
-        JToolBarHelper::preferences( 'com_pvnominations' );
+        JToolBarHelper::preferences('com_pvnominations');
 
         $t = &JToolbar::getInstance('toolbar');
         $t->appendButton('Link', 'default', 'Export Filter', 'index.php?option=com_pvnominations&controller=nominations&format=raw');

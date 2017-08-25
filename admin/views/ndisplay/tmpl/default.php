@@ -8,10 +8,10 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
     }
 }
 // try to cast to object next
-$row = !$this->isNew ? $this->ndisplay : (object)JRequest::get('post');
+$row = ! $this->isNew ? $this->ndisplay : (object) JRequest::get('post');
 $ndata = $this->ndata;
-jimport("pvcombo.PVCombo");
-$election_types = array((object)array('idx'=>'primary', 'value'=>'primary') , (object)array('idx'=>'general', 'value'=>'general') , (object)array('idx'=>'special', 'value'=>'special'));
+jimport('pvcombo.PVCombo');
+$election_types = array((object) array('idx'=>'primary', 'value'=>'primary'), (object) array('idx'=>'general', 'value'=>'general'), (object) array('idx'=>'special', 'value'=>'special'));
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvnominations');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
@@ -44,7 +44,7 @@ $election_types = array((object)array('idx'=>'primary', 'value'=>'primary') , (o
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('calendar', $row->election_date, "election_date", "election_date");?>
+                    <?=JHTML::_('calendar', $row->election_date, 'election_date', 'election_date');?>
                 </td>
             </tr>
             <tr>
@@ -54,7 +54,7 @@ $election_types = array((object)array('idx'=>'primary', 'value'=>'primary') , (o
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('calendar', $row->signing_start, "signing_start", "signing_start");?>
+                    <?=JHTML::_('calendar', $row->signing_start, 'signing_start', 'signing_start');?>
                 </td>
             </tr>
             <tr>
@@ -64,7 +64,7 @@ $election_types = array((object)array('idx'=>'primary', 'value'=>'primary') , (o
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('calendar', $row->signing_stop, "signing_stop", "signing_stop");?>
+                    <?=JHTML::_('calendar', $row->signing_stop, 'signing_stop', 'signing_stop');?>
                 </td>
             </tr>
             <tr>
@@ -74,7 +74,7 @@ $election_types = array((object)array('idx'=>'primary', 'value'=>'primary') , (o
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('calendar', $row->display_start, "display_start", "display_start");?>
+                    <?=JHTML::_('calendar', $row->display_start, 'display_start', 'display_start');?>
                 </td>
             </tr>
             <tr>
@@ -84,7 +84,7 @@ $election_types = array((object)array('idx'=>'primary', 'value'=>'primary') , (o
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('calendar', $row->display_stop, "display_stop", "display_stop");?>
+                    <?=JHTML::_('calendar', $row->display_stop, 'display_stop', 'display_stop');?>
                 </td>
             </tr>
             <tr>

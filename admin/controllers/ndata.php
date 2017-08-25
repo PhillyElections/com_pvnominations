@@ -1,18 +1,21 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Ndata Controller for Pvnominations Component
+ * Ndata Controller for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsControllerNdata extends PvnominationsController
 {
     /**
-     * the Ndata View
+     * the Ndata View.
+     *
      * @return void
      */
     public function display()
@@ -21,9 +24,10 @@ class PvnominationsControllerNdata extends PvnominationsController
 
         parent::display();
     }
-    
+
     /**
-     * Redirect Edit task to Nomination Controller
+     * Redirect Edit task to Nomination Controller.
+     *
      * @return void
      */
     public function edit()
@@ -36,7 +40,8 @@ class PvnominationsControllerNdata extends PvnominationsController
     }
 
     /**
-     * Redirect Add task to Nomination Controller
+     * Redirect Add task to Nomination Controller.
+     *
      * @return void
      */
     public function add()

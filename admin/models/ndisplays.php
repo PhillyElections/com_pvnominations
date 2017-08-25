@@ -1,36 +1,42 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination displays Model for Pvnominations Component
+ * Nomination displays Model for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsModelNdisplays extends JModel
 {
     /**
-     * Nominations data array
+     * Nominations data array.
+     *
      * @var array
      */
     public $_data;
 
     /**
-     * Nominations total
+     * Nominations total.
+     *
      * @var integer
      */
     public $_total;
 
     /**
-     * Pagination object
+     * Pagination object.
+     *
      * @var object
      */
     public $_pagination;
 
     /**
-     * Constructor prepares for pagination
+     * Constructor prepares for pagination.
+     *
      * @return void
      */
     public function __construct()
@@ -51,7 +57,8 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * Build and return the query
+     * Build and return the query.
+     *
      * @return string SQL Query
      */
     public function _buildQuery()
@@ -69,7 +76,8 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * Retrieve, store, and returns Nominations data
+     * Retrieve, store, and returns Nominations data.
+     *
      * @return array Nominations Data
      */
     public function getData()
@@ -84,7 +92,8 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * Retrieve, store, and return number of Nominations rows
+     * Retrieve, store, and return number of Nominations rows.
+     *
      * @return int number of rows
      */
     public function getTotal()
@@ -99,7 +108,8 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * Retrieve, store and return a current JPagination object of Nominations
+     * Retrieve, store and return a current JPagination object of Nominations.
+     *
      * @return array Array of objects containing the data from the database
      */
     public function getPagination()
@@ -114,7 +124,7 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * publish displays
+     * publish displays.
      *
      * @return void
      */
@@ -130,7 +140,7 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * unpublish displays
+     * unpublish displays.
      *
      * @return void
      */
@@ -146,7 +156,7 @@ class PvnominationsModelNdisplays extends JModel
     }
 
     /**
-     * unpublish displays
+     * unpublish displays.
      *
      * @return void
      */

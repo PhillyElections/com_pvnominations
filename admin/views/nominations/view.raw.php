@@ -1,10 +1,12 @@
 <?php
 /**
- * Pvnominations View for Pvnominations Component
+ * Pvnominations View for Pvnominations Component.
  *
  * @package    Joomla.Tutorials
  * @subpackage Components
+ *
  * @link http://docs.joomla.org/Developing_a_Model-View-Controller_Component_-_Part_4
+ *
  * @license        GNU/GPL
  */
 
@@ -12,7 +14,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Pvnominations View
+ * Pvnominations View.
  *
  * @package    Joomla.Tutorials
  * @subpackage Components
@@ -20,7 +22,10 @@ defined('_JEXEC') or die('Restricted access');
 class PvnominationsViewNominations extends JView
 {
     /**
-     * Pvnominations view display method
+     * Pvnominations view display method.
+     *
+     * @param mixed $tpl
+     *
      * @return void
      **/
     public function display($tpl = 'export')
@@ -30,7 +35,7 @@ class PvnominationsViewNominations extends JView
 
         $items = &$this->get('Data');
 
-        if (!count($items)) {
+        if (! count($items)) {
             $mainframe = JFactory::getApplication();
             $mainframe->redirect('index.php?option=com_pvnominations', 'You cannot export an empty result set.');
         }

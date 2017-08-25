@@ -1,18 +1,21 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nominations Controller for Pvnominations Component
+ * Nominations Controller for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsControllerNominations extends PvnominationsController
 {
     /**
-     * Ndisplay the Nominations View
+     * Ndisplay the Nominations View.
+     *
      * @return void
      */
     public function display()
@@ -23,7 +26,8 @@ class PvnominationsControllerNominations extends PvnominationsController
     }
 
     /**
-     * Redirect Edit task to Nomination Controller
+     * Redirect Edit task to Nomination Controller.
+     *
      * @return void
      */
     public function edit()
@@ -36,7 +40,8 @@ class PvnominationsControllerNominations extends PvnominationsController
     }
 
     /**
-     * Redirect Add task to Nomination Controller
+     * Redirect Add task to Nomination Controller.
+     *
      * @return void
      */
     public function add()

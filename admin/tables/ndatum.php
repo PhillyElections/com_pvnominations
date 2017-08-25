@@ -1,12 +1,14 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination Table for Pvnominations Component
+ * Nomination Table for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class TableNdatum extends JTable
@@ -23,7 +25,8 @@ class TableNdatum extends JTable
     public $updated;
 
     /**
-     * Define our table, index
+     * Define our table, index.
+     *
      * @param [type] &$_db [description]
      */
     public function __construct(&$_db)
@@ -32,7 +35,8 @@ class TableNdatum extends JTable
     }
 
     /**
-     * Validate before saving
+     * Validate before saving.
+     *
      * @return boolean
      */
     public function check()
@@ -40,19 +44,19 @@ class TableNdatum extends JTable
         $error = 0;
 
         // numeric, non-zero office_id
-        if (!is_numeric($this->office_id) || $this->office_id < 1) {
+        if (! is_numeric($this->office_id) || $this->office_id < 1) {
             $this->setError(JText::_('VALIDATION OFFICE SELECTION REQUIRED'));
             $error++;
         }
 
         // numeric signatures
-        if (!is_numeric($this->signatures)) {
+        if (! is_numeric($this->signatures)) {
             $this->setError(JText::_('VALIDATION SIGNATURES NUMERIC'));
             $error++;
         }
 
         // numeric fees
-        if (!is_numeric($this->fees)) {
+        if (! is_numeric($this->fees)) {
             $this->setError(JText::_('VALIDATION FEES NUMERIC'));
             $error++;
         }
@@ -60,6 +64,7 @@ class TableNdatum extends JTable
         if ($error) {
             return false;
         }
+
         return true;
     }
 }

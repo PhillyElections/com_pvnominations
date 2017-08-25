@@ -1,12 +1,14 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination Table for Pvnominations Component
+ * Nomination Table for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class TableNominationhash extends JTable
@@ -25,7 +27,8 @@ class TableNominationhash extends JTable
     public $updated;
 
     /**
-     * Define our table, index
+     * Define our table, index.
+     *
      * @param [type] &$_db [description]
      */
     public function __construct(&$_db)

@@ -1,4 +1,5 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
@@ -149,6 +150,7 @@ class PvnominationsModelOutput extends JModel
 
         if (JRequest::getVar('test')) {
             $this->_test = true;
+
             return;
         }
 
@@ -214,12 +216,13 @@ class PvnominationsModelOutput extends JModel
             $this->_values['START_DAY_SUFFIX']['value'] = date('S', $start->toUnix());
             $this->_values['START_MONTH_EN']['value'] = date('F', $start->toUnix());
             $this->_values['START_MONTH_ES']['value'] = $this->translate(date('F', $start->toUnix()));
+
             return $this->_values;
         }
 
         $data = $this->getData();
 
-// ordinal suffix for day is date("S", $datevalue);
+        // ordinal suffix for day is date("S", $datevalue);
         $finish = JFactory::getDate($data->signing_stop);
         $start = JFactory::getDate($data->signing_start);
         $election = JFactory::getDate($data->election_date);
@@ -295,6 +298,7 @@ class PvnominationsModelOutput extends JModel
      * Set the Input identifier.
      *
      * @param    int item identifier
+     * @param mixed $id
      */
     public function setId($id)
     {

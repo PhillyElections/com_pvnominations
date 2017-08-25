@@ -1,18 +1,21 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination display Model for Pvnominations Component
+ * Nomination display Model for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsModelNdisplay extends JModel
 {
     /**
-     * Constructor retrieves the ID from the request
+     * Constructor retrieves the ID from the request.
+     *
      * @return    void
      */
     public function __construct()
@@ -30,8 +33,10 @@ class PvnominationsModelNdisplay extends JModel
     }
 
     /**
-     * Set the active Nomination ID
+     * Set the active Nomination ID.
+     *
      * @param int $id]
+     *
      * @return  void
      */
     public function setId($id)
@@ -42,7 +47,8 @@ class PvnominationsModelNdisplay extends JModel
     }
 
     /**
-     * Get an nomination
+     * Get an nomination.
+     *
      * @return object with data
      */
     public function &getData()
@@ -53,7 +59,7 @@ class PvnominationsModelNdisplay extends JModel
             $this->_db->setQuery($query);
             $this->_data = $this->_db->loadObject();
         }
-        if (!$this->_data) {
+        if (! $this->_data) {
             $this->_data = new stdClass();
             $this->_data->id = 0;
         }
@@ -62,7 +68,10 @@ class PvnominationsModelNdisplay extends JModel
     }
 
     /**
-     * Method to store a record
+     * Method to store a record.
+     *
+     * @param mixed $data
+     *
      * @return    boolean
      */
     public function store($data)
@@ -78,22 +87,25 @@ class PvnominationsModelNdisplay extends JModel
         $data[$dateIndex] = $dateNow->toMySQL();
 
         // Bind the form fields to the Nomination table
-        if (!$row->bind($data)) {
+        if (! $row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
+
             return false;
         }
 
         // Make sure the Nomination record is valid
-        if (!$row->check()) {
+        if (! $row->check()) {
             foreach ($row->getErrors() as $msg) {
                 $this->setError($msg);
             }
+
             return false;
         }
 
         // Store the web link table to the database
-        if (!$row->store()) {
+        if (! $row->store()) {
             $this->setError($this->_db->getErrorMsg());
+
             return false;
         }
 
@@ -101,7 +113,8 @@ class PvnominationsModelNdisplay extends JModel
     }
 
     /**
-     * Delete record(s)
+     * Delete record(s).
+     *
      * @return    boolean
      */
     public function delete()
@@ -112,12 +125,14 @@ class PvnominationsModelNdisplay extends JModel
 
         if (count($cids)) {
             foreach ($cids as $cid) {
-                if (!$row->delete($cid)) {
+                if (! $row->delete($cid)) {
                     $this->setError($row->getErrorMsg());
+
                     return false;
                 }
             }
         }
+
         return true;
     }
 }

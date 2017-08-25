@@ -1,18 +1,21 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Nomination Controller for Pvnominations Component
+ * Nomination Controller for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsControllerNomination extends PvnominationsController
 {
     /**
-     * Bind tasks to methods
+     * Bind tasks to methods.
+     *
      * @return void
      */
     public function __construct()
@@ -25,7 +28,8 @@ class PvnominationsControllerNomination extends PvnominationsController
     }
 
     /**
-     * Ndisplay the edit form
+     * Ndisplay the edit form.
+     *
      * @return void
      */
     public function edit()
@@ -36,13 +40,12 @@ class PvnominationsControllerNomination extends PvnominationsController
     }
 
     /**
-     * Save a record (and redirect to main page)
+     * Save a record (and redirect to main page).
      *
      * @return void
      */
     public function save()
     {
-
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('nomination');
@@ -64,7 +67,8 @@ class PvnominationsControllerNomination extends PvnominationsController
     }
 
     /**
-     * Remove record(s)
+     * Remove record(s).
+     *
      * @return void
      */
     public function remove()
@@ -72,7 +76,7 @@ class PvnominationsControllerNomination extends PvnominationsController
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('nomination');
-        if (!$model->delete()) {
+        if (! $model->delete()) {
             $msg = JText::_('Error: One or More Nominations Could not be Deleted');
         } else {
             $msg = JText::_('Nominations(s) Deleted');
@@ -82,7 +86,8 @@ class PvnominationsControllerNomination extends PvnominationsController
     }
 
     /**
-     * Cancel editing a record
+     * Cancel editing a record.
+     *
      * @return void
      */
     public function cancel()

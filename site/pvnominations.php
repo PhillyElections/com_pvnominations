@@ -1,12 +1,12 @@
 <?php
 /**
- * Site bootstrap file for Pvnominations Component
+ * Site bootstrap file for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
-
 defined('_JEXEC') or die('Restricted access');
 
 jimport('kint.kint');

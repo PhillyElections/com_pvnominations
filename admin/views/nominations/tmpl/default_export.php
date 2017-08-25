@@ -1,4 +1,6 @@
-<?php defined('_JEXEC') or die('Restricted access');
+<?php
+
+defined('_JEXEC') or die('Restricted access');
 
 //      JToolBarHelper::back();
 
@@ -26,7 +28,8 @@ ob_end_flush();
 
 JResponse::sendHeaders();
 $output = fopen('php://output', 'w');
-fputcsv($output,
+fputcsv(
+    $output,
     array('ID', 'P', 'NAME', 'OFFICE', 'ADDRESS', 'OCCUPATION', 'PARTY', 'IP', 'CREATED',
     )
 );
@@ -34,7 +37,8 @@ fputcsv($output,
 $k = 0;
 for ($i = 0, $n = count($this->items); $i < $n; $i++) {
     $row = &$this->items[$i];
-    fputcsv($output,
+    fputcsv(
+        $output,
         array(
             $row->id,
             ($row->published ? 'P' : 'U'),

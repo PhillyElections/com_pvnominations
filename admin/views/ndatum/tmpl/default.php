@@ -9,10 +9,10 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 }
 
 // try to cast to object next
-$row = !$this->isNew ? $this->ndatum : (object)JRequest::get('post');
+$row = ! $this->isNew ? $this->ndatum : (object) JRequest::get('post');
 $offices = $this->offices;
 
-jimport("pvcombo.PVCombo");
+jimport('pvcombo.PVCombo');
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvnominations');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
@@ -65,7 +65,7 @@ jimport("pvcombo.PVCombo");
                     </label>
                 </td>
                 <td>
-                    <input type="checkbox" id="published" name="published" value="published" <?=$row->published ? "checked" : '' ;?> class="check_box required" />
+                    <input type="checkbox" id="published" name="published" value="published" <?=$row->published ? 'checked' : '';?> class="check_box required" />
                 </td>
             </tr>
             <tr>

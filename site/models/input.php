@@ -1,24 +1,28 @@
 <?php
+
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Input Model for Pvnominations Component
+ * Input Model for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
 class PvnominationsModelInput extends JModel
 {
     /**
-     * Nominations data array
+     * Nominations data array.
+     *
      * @var array
      */
     public $_data;
 
     /**
-     * Build and return the query
+     * Build and return the query.
+     *
      * @return string SQL Query
      */
     public function _buildQuery()
@@ -39,7 +43,8 @@ class PvnominationsModelInput extends JModel
     }
 
     /**
-     * Retrieve, store, and returns Nominations data
+     * Retrieve, store, and returns Nominations data.
+     *
      * @return array Nominations Data
      */
     public function getData()
@@ -54,9 +59,12 @@ class PvnominationsModelInput extends JModel
     }
 
     /**
-     * Method to store a record
+     * Method to store a record.
      *
      * @access    public
+     *
+     * @param mixed $data
+     *
      * @return    boolean    True on success
      */
     public function store($data)
@@ -74,7 +82,7 @@ class PvnominationsModelInput extends JModel
         } else {
             // weird, the hash didn't match. find it and capture it.
             foreach ($data as $datum => $value) {
-                if (!in_array($datum, array('display_id', 'candidate_name', 'candidate_party', 'candidate_occupation', 'candidate_address', 'ItemId', 'task', 'view')) && $value == '1') {
+                if (! in_array($datum, array('display_id', 'candidate_name', 'candidate_party', 'candidate_occupation', 'candidate_address', 'ItemId', 'task', 'view')) && $value == '1') {
                     $data['hash'] = $datum;
                 }
             }
@@ -93,7 +101,7 @@ class PvnominationsModelInput extends JModel
             $row->candidate_occupation == $data['candidate_occupation']) {
             // all done.
             return array('id'=>$row->id, 'hash'=>$row->hash);
-        } else if ($row->id) {
+        } elseif ($row->id) {
             // if we match on hash (if we have an id)
             // and not enough of the other values, this is really new,
             // so force a new hash
@@ -107,27 +115,29 @@ class PvnominationsModelInput extends JModel
 
         $dateIndex = 'created';
 
-
         $data[$dateIndex] = $dateNow->toMySQL();
 
         // Bind the form fields to the Item table
-        if (!$row->bind($data)) {
+        if (! $row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
+
             return false;
         }
 
         // Make sure the Item record is valid
-        if (!$row->check()) {
+        if (! $row->check()) {
             //$this->setError($this->_db->getErrorMsg());
             foreach ($row->getErrors() as $msg) {
                 $this->setError($msg);
             }
+
             return false;
         }
 
         // Store the web link table to the database
-        if (!$row->store()) {
+        if (! $row->store()) {
             $this->setError($this->_db->getErrorMsg());
+
             return false;
         }
 
@@ -135,7 +145,7 @@ class PvnominationsModelInput extends JModel
     }
 
     /**
-     * unpublish data
+     * unpublish data.
      *
      * @return void
      */
@@ -145,7 +155,7 @@ class PvnominationsModelInput extends JModel
         $hash = JRequest::getVar('hash');
 
         foreach ($cid as $id) {
-            $rows = $this->_getList(" SELECT * FROM `#__pv_nominations` WHERE `id`=" . $this->_db->quote($id) . " AND `hash`=" . $this->_db->quote($hash));
+            $rows = $this->_getList(' SELECT * FROM `#__pv_nominations` WHERE `id`=' . $this->_db->quote($id) . ' AND `hash`=' . $this->_db->quote($hash));
             if (count($rows)) {
                 $row = JTable::getInstance('Nomination', 'Table');
                 $row->load($id);

@@ -1,12 +1,12 @@
 <?php
 /**
- * Admin bootstrap file for Pvnominations Component
+ * Admin bootstrap file for Pvnominations Component.
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
+ *
  * @license    GNU/GPL
  */
-
 defined('_JEXEC') or die('Restricted access');
 
 // including debugger
