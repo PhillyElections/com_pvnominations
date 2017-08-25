@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_nomination_data` (
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `pv_nomination_data_office_id` (`office_id`)
-) ENGINE=ARIA DEFAULT CHARSET=utf8;
+);
 
 CREATE TABLE IF NOT EXISTS `#__pv_nomination_displays` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_nomination_displays` (
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `pv_nomination_display_data_id` (`data_id`)
-) ENGINE=ARIA DEFAULT CHARSET=utf8;
+);
 
 CREATE TABLE IF NOT EXISTS `#__pv_nominations` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_nominations` (
   PRIMARY KEY (`id`),
   KEY `pv_nominations_display_id` (`display_id`),
   UNIQUE KEY `pv_nominations_hash` (`hash`)
-  ) ENGINE=ARIA DEFAULT CHARSET=utf8;
+  );
 
 INSERT INTO `#__pv_tables` 
   (`name`, `created`) 
