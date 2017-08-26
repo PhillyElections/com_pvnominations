@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_nominations` (
   `candidate_address` varchar(100) NOT NULL DEFAULT '',
   `candidate_occupation` varchar(100) NOT NULL DEFAULT '',
   `candidate_party` varchar(100) NOT NULL DEFAULT '',
+  `candidate_precinct` varchar(20) NOT NULL DEFAULT '',
   `user_ip` varchar(16) NOT NULL DEFAULT '',
   `published` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `checked_out` int(11) UNSIGNED NOT NULL DEFAULT 0,
