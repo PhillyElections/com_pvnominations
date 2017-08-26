@@ -60,22 +60,12 @@ jimport('pvcombo.PVCombo');
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="namemsg" for="show_wards">
-                        <?=JText::_('SHOW_WARDS');?>:
+                    <label id="namemsg" for="show_precincts">
+                        <?=JText::_('SHOW_PRECINCTS');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="checkbox" id="show_wards" name="show_wards" value="show_wards" <?=$row->show_wards ? 'checked' : '';?> class="check_box" />
-                </td>
-            </tr>
-            <tr>
-                <td width="200" height="30">
-                    <label id="namemsg" for="show_divisions">
-                        <?=JText::_('SHOW_DIVISIONS');?>:
-                    </label>
-                </td>
-                <td>
-                    <input type="checkbox" id="show_divisions" name="show_divisions" value="show_divisions" <?=$row->show_divisions ? 'checked' : '';?> class="check_box" />
+                    <input type="checkbox" id="show_precincts" name="show_precincts" value="show_precincts" <?=$row->show_precincts ? 'checked' : '';?> class="check_box" />
                 </td>
             </tr>
             <tr>
